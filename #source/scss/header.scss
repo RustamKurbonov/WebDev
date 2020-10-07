@@ -1,0 +1,234 @@
+.header {
+	background: url('../img/bg-image.jpg') 0 0/cover no-repeat;
+	&__wraper {
+		
+		max-width: 734px;
+		margin: 0 auto;
+		&__menu {
+			display: flex;
+			justify-content: center;
+			position: fixed;
+			width: 100%;
+			top: 0;
+			left: 0;
+			padding: 41px 0px 0px 0px;
+			z-index: 10;
+			&:before {
+				content:'';
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 90px;
+				background-color: #000000;
+				opacity: 0.7;
+				z-index: 10;
+			}
+		}
+		&__menu__list {
+			display: flex;
+		}
+		&__menu__link {
+			margin: 0px 85px 0px 0px;
+			height: 14px;
+			position: relative;
+			z-index: 15;
+			&:nth-child(2){
+				margin: 0px 246px 0px 0px;
+			}
+			&:last-child{
+				margin: 0px 10px 0px 0px;
+			}
+			& a {
+				font-weight: 500;
+				color: #FFFFFF;
+			}
+			&:hover {
+				border-bottom: 1.5px solid #ffffff;
+				transition-duration: 500ms; 
+			}
+		}
+		&__menu__logo {
+			position: fixed;
+			z-index: 15;
+			top: 25px;
+			left: 48.9%;
+			max-width: 44px;
+			& img {
+				max-width: 100%;
+			}
+		}
+		&__menu__burger {
+		}
+		&__body {
+			padding: 114px 0px 0px 0px;
+		}
+		&__body__title {
+			font-weight: 700;
+			font-size: 64px;
+			line-height: 75px;
+			letter-spacing: 4.5px;
+			text-transform: uppercase;
+			color: #FFFFFF;
+			text-align: center;
+			@media (max-width:767.98px){
+				font-size: 48px;
+			}
+		}
+		&__body__text {
+			max-width: 500px;
+			margin: 20px auto 30px auto;
+			line-height: 26px;
+			font-weight: 400;
+			font-size: 18px;
+			text-align: center;
+			color: #FFFFFF;
+			@media (max-width:767.98px){
+				font-size: 16px;
+			}
+		}
+		&__body__link {
+			margin: 0px 0px 180px 0px;
+			& a {
+				margin: 0 auto;
+				display: flex;
+				width: 184px;
+				height: 46px;
+				background: #00AFDB;
+				color: #ffffff;
+				text-transform: uppercase;
+				justify-content: center;
+				align-items: center;
+				&:hover{
+					background:#009CC2;
+					transition-duration: 500ms;
+				}
+				transition-duration: 500ms;
+			}
+		}
+		&__body__mess {
+			display: flex;
+			justify-content: center;
+			padding: 0px 0px 90px 0px;
+			& a {
+				margin: 0px 0px 0px 30px;
+				&:first-child {
+					margin: 0px;
+				}
+			}		
+		}
+		&__body__mess__image {
+			display: block;
+			width: 20px;
+			height: 20px;
+			border: 1.5px solid #ffffff;
+			border-radius: 50%;
+			padding: 3px;
+		}
+	}
+}
+
+//======================================================
+@media (max-width:767.98px){
+	body.lock {
+		overflow: hidden;
+	}
+	.header__wraper {
+		position: relative;
+		&__menu {
+			position: fixed;
+			top: -150%;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-color: #111A24;
+			overflow: auto;
+			&:before {
+				position:fixed;
+			}
+			&.active {
+				top: 0;
+				transition-duration: 500ms;
+				&:before {
+					position:absolute;
+				}
+			}
+			transition-duration: 500ms; 
+		}
+		&__menu__list {
+			display: block;
+			position: absolute;
+			top: 140px;
+			left: 50px;
+		}
+		&__menu__link {
+			padding: 0px 0px 90px 0px;
+			&:hover {
+				border-bottom: none; 
+			}
+			& a {
+				font-weight: 500;
+				font-size: 28px;
+				color: #FFFFFF;
+			}
+		}
+		&__menu__logo {
+			top: 25px;
+			left: 10%;
+		}
+		&__menu__burger {
+			width: 35px;
+			height: 25px;
+			z-index: 10;
+			position: fixed;
+			left: 85%;
+			top: 35px;
+			& span{
+				content:'';
+				position: absolute;
+				background-color: #ffffff;
+				width: 100%;
+				height: 2px;
+				left: 0;
+				top: 12px;
+				transition-duration: 500ms;				
+			}
+			&:before {
+				content:'';
+				position: absolute;
+				background-color: #ffffff;
+				width: 100%;
+				height: 2px;
+				left: 0;
+				top: 0px;
+				transition-duration: 500ms;	
+			}
+			&:after {
+				content:'';
+				position: absolute;
+				background-color: #ffffff;
+				width: 100%;
+				height: 2px;
+				left: 0;
+				bottom: 0;
+				transition-duration: 500ms;
+			}
+			&.active {
+				& span {
+					display: none;
+					transition-duration: 500ms;
+				}
+				&:before {
+					transform: rotate(45deg);
+					top: 11.5px;
+					transition-duration: 500ms;
+				}
+				&:after {
+					transform: rotate(-45deg);
+					bottom: 11.5px;
+					transition-duration: 500ms;
+				}
+			}
+		}
+	}
+}
